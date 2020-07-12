@@ -289,34 +289,34 @@ class Form extends React.Component{
                     <Row className="form-group mt-3 mb-3">
                     <Label htmlFor="domain" className="font-weight-bold mb-2"  md={2}>Domain Name</Label>
                    
-                    <div class="custom-control custom-switch offset-1 pt-2"> 
-                        <Col>
+                    <div class="custom-control custom-switch  pt-2"> 
+                        <div className="col-10 col-sm">
                             <Control.checkbox model=".tech" name="tech" id="tech"
                             onChange = {this.tech , this.handleChange}
                             className="form-control custom-control-input">   
                             </Control.checkbox><Label className="custom-control-label" htmlFor="tech"> Technical</Label> 
-                        </Col>
+                        </div>
                     </div>
 
                     <div class="custom-control custom-switch pt-2"> 
-                    <Col>
+                    <div className="col-12 col-sm">
                     <Control.checkbox model=".corp" name="corp" id="corp"
                       onChange = {this.corp , this.handleChange}
                     className="form-control custom-control-input">
                        
                     </Control.checkbox><Label className="custom-control-label" htmlFor="corp"> Corporate</Label>
-                   </Col>
+                   </div>
                    </div>
 
                    <div class="custom-control custom-switch pt-2"> 
-                    <Col>
+                    <div className="col-12 col-sm">
             
                     <Control.checkbox model=".des" name="des" id="des"
                        onChange = {this.des  , this.handleChange}
                     className="form-control custom-control-input">
                        
                     </Control.checkbox><Label className="custom-control-label" htmlFor="des"> Design and Creatives</Label>
-                   </Col>
+                   </div>
                    </div>
                    
                    

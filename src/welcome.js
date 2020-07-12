@@ -30,18 +30,19 @@ class Welcome extends React.Component{
         </Jumbotron>
         <h4 className="mb-4">We are finally recruiting</h4>
         <h5 className="mb-4 lead">The next page will present you a form which will require you to fill in the following information</h5>
-        <ul className="list-gorup">
-            <li className="list-group-item">Your Name , Phone Number and Email Address</li>
-            <li className="list-group-item">Your Github ID and Resume(name it using your full-name)</li>
-            <li className="list-group-item">The domain you want to enter , the subdomain and your main preference (You can fill in multiple domains)</li>
-            <li className="list-group-item">2 Questions to be answered with atleast 150 words.</li>
-        </ul>
-
+        <div className="d-flex justify-content-center mr-5">
+            <ul className="list-gorup">
+                <li className="list-group-item">Your Name , Phone Number and Email Address</li>
+                <li className="list-group-item">Your Github ID and Resume(name it using your full-name)</li>
+                <li className="list-group-item">The domain you want to enter , the subdomain and your main preference (You can fill in multiple domains)</li>
+                <li className="list-group-item">2 Questions to be answered with atleast 150 words.</li>
+            </ul>
+        </div>       
         <h5 className="text-danger"><strong>*Note that all these sections must be filled carefully as they will determine the chances of your selection.</strong></h5>
         <h3 className="text-primary mt-3 mb-2 lead">Best of Luck!</h3>
 
       
-    <Link to="/form" className="btn btn-success btn-lg mt-4 pl-5 pr-5">Start</Link>
+    <Link to="/form" className="btn btn-success btn-lg mt-4 pl-5 pr-5 mb-4">Start</Link>
             </div>
         );
     }
