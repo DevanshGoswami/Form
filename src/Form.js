@@ -301,12 +301,12 @@ class Form extends React.Component{
                         </Col>
                     </Row>
                     <Row className="form-group mt-3 mb-3">
-                        <Label htmlFor="github" className="font-weight-bold" md={2}>GitHub ID</Label>
+                        <Label htmlFor="github" className="font-weight-bold" md={2}>LinkedIn</Label>
                         <Col md={10}>
                             <Control.text model=".github" id="github" name="github"
                              onChange = {this.handleChange}
                              value = {this.state.github}
-                                placeholder="Github ID"
+                                placeholder="LinkedIn ID"
                                 className="form-control"
                                 validators={{
                                     required
