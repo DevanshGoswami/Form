@@ -20,7 +20,7 @@ var firebaseConfig = {
 
   var Ref = firebase.database().ref('Submitions');
 
-  function SaveSubmit(name,telnum,email,github,subdomainT,subdomainC,subdomainD,rate,message,why,main){
+  function SaveSubmit(name,telnum,email,github,subdomainT,subdomainC,subdomainD,rate,message,why,main,year,branch){
       var newSubmit = Ref.push();
       newSubmit.set({
           name : name,
@@ -33,10 +33,10 @@ var firebaseConfig = {
           rate : rate,
           message : message,
           why : why,
-          main : main
-         
+          main : main,
+          year : year,
+          branch : branch
         
-
       });
   }
 
@@ -60,13 +60,16 @@ class Form extends React.Component{
             tech : false,
             corp : false,
             des : false,
-            subdomainT : '',
-            subdomainC : '',
-            subdomainD : '',
-            main : 'Technical',
+            subdomainT : 'None',
+            subdomainC : 'None',
+            subdomainD : 'None',
+            main : 'None',
             rate : '5',
             message : '',
-            why : ''
+            why : '',
+            year : '2',
+            branch : '',
+        
             
             
         }
@@ -76,12 +79,14 @@ class Form extends React.Component{
         this.tech = this.tech.bind(this);
         this.des = this.des.bind(this);
         this.corp = this.corp.bind(this);
+      
     }
 
    
    
     handleSubmit(values) {
 
+      
         var N = this.state.name;
         var T = this.state.telnum;
         var E = this.state.email;
@@ -93,15 +98,18 @@ class Form extends React.Component{
         var M = this.state.message;
         var W = this.state.why;
         var Main = this.state.main;
+        var Y = this.state.year;
+        var B = this.state.branch;
         
       
 
 
-        SaveSubmit(N,T,E,G,Tech,Corp,Des,R,M,W,Main);
+        SaveSubmit(N,T,E,G,Tech,Corp,Des,R,M,W,Main,Y,B);
        
         this.props.history.push('/thanks');
        // window.location.reload(false);
 
+     
 
         
     }
@@ -121,20 +129,25 @@ class Form extends React.Component{
 
     tech(e){
         this.setState({
-            tech : true,
+            tech : !this.state.tech,
             
         })
     }
     corp(e){
         this.setState({
-            corp : true
+            corp : !this.state.corp
         })
     }
     des(e){
         this.setState({
-            des : true
+            des : !this.state.des
         })
     }
+
+  
+   
+   
+  
 
     render(){
         
@@ -189,6 +202,56 @@ class Form extends React.Component{
                         </Col>
                     </Row>
                   
+                    <Row className="form-group mt-3 mb-3">
+                    <Label htmlFor="year" className="font-weight-bold"  md={2}>Year of College</Label>
+                    <Col md={10}>
+                      
+                               <Control.select model=".year" name="year" id="year"
+                                onChange = {this.handleChange}
+                                value = {this.state.year}
+                                className="form-control custom-select">
+                                   
+                                   <option>2</option>
+                                   <option>3</option>
+                                   <option>4</option>
+                                   
+                                  
+                               </Control.select>
+                               <Errors
+                                className="text-danger"
+                                model=".year"
+                                show="touched"
+                                messages={{
+                                    required: 'Required'
+                                
+                                }}
+                               />
+                         </Col>
+                       </Row>
+                       <Row className="form-group mt-3 mb-3">
+                        <Label htmlFor="branch" className="font-weight-bold" md={2}>Branch and Specialization</Label>
+                        <Col md={10}>
+                            <Control.text model=".branch" id="branch" name="branch"
+                             onChange = {this.handleChange}
+                             value = {this.state.branch}
+                                placeholder="CSE Core"
+                                className="form-control"
+                                validators={{
+                                    required
+                                }}
+                                 />
+                            <Errors
+                                className="text-danger"
+                                model=".branch"
+                                show="touched"
+                                messages={{
+                                    required: 'Required'
+                                
+                                }}
+                             />
+                        </Col>
+                    </Row>
+
                     <Row className="form-group mt-3 mb-3">
                         <Label htmlFor="telnum" className="font-weight-bold" md={2}>Mobile Number</Label>
                         <Col md={10}>
@@ -263,7 +326,7 @@ class Form extends React.Component{
 
                     <Row className="form-group mt-3 mb-3">
                         <Label htmlFor="upload" className="font-weight-bold" md={2}>Resume</Label>
-                        <Col md={7} className="custom-file">
+                        <Col md={7}>
                             <Control.file model=".upload" id="ipload" name="upload"
                             
                                 onChange = {this.fileUpload}
@@ -293,6 +356,7 @@ class Form extends React.Component{
                         <div className="col-10 col-sm">
                             <Control.checkbox model=".tech" name="tech" id="tech"
                             onChange = {this.tech , this.handleChange}
+                       
                             className="form-control custom-control-input">   
                             </Control.checkbox><Label className="custom-control-label" htmlFor="tech"> Technical</Label> 
                         </div>
@@ -302,6 +366,7 @@ class Form extends React.Component{
                     <div className="col-12 col-sm">
                     <Control.checkbox model=".corp" name="corp" id="corp"
                       onChange = {this.corp , this.handleChange}
+               
                     className="form-control custom-control-input">
                        
                     </Control.checkbox><Label className="custom-control-label" htmlFor="corp"> Corporate</Label>
@@ -313,6 +378,7 @@ class Form extends React.Component{
             
                     <Control.checkbox model=".des" name="des" id="des"
                        onChange = {this.des  , this.handleChange}
+                 
                     className="form-control custom-control-input">
                        
                     </Control.checkbox><Label className="custom-control-label" htmlFor="des"> Design and Creatives</Label>
@@ -331,11 +397,25 @@ class Form extends React.Component{
                                 <Control.select model=".subdomainT" name="subdomainT" id="subdomainT"
                                  onChange = {this.handleChange}
                                  value = {this.state.subdomainT}
+                                 validators={{
+                                    required
+                                }}
                                     className="form-control custom-select">
+                                         <option>None</option>
                                     <option>App/Web Development</option>
                                     <option>Data Science</option>
                                     <option>Competetive Coding</option>
+                                  
                                 </Control.select>
+                                <Errors
+                                className="text-danger"
+                                model=".subdomainT"
+                                show="touched"
+                                messages={{
+                                    required: 'Required'
+                                
+                                }}
+                             />
                           </Col>
                         </Row> : null
 
@@ -350,11 +430,25 @@ class Form extends React.Component{
                                <Control.select model=".subdomainC" name="subdomainC" id="subdomainC"
                                 onChange = {this.handleChange}
                                 value = {this.state.subdomainC}
+                                validators={{
+                                    required
+                                }}
                                    className="form-control custom-select">
+                                    <option>None</option>
                                    <option>Sponsorship</option>
                                    <option>Marketing</option>
                                    <option>Event Management</option>
+                                  
                                </Control.select>
+                               <Errors
+                                className="text-danger"
+                                model=".subdomainC"
+                                show="touched"
+                                messages={{
+                                    required: 'Required'
+                                
+                                }}
+                             />
                          </Col>
                        </Row>
                        : null
@@ -369,11 +463,25 @@ class Form extends React.Component{
                                <Control.select model=".subdomainD" name="subdomainD" id="subdomainD"
                                 onChange = {this.handleChange}
                                 value = {this.state.subdomainD}
+                                validators={{
+                                    required
+                                }}
                                    className="form-control custom-select">
+                                    <option>None</option>
                                    <option>Content Writing</option>
                                    <option>Video Editing</option>
                                    <option>Graphic Designing</option>
+                                  
                                </Control.select>
+                               <Errors
+                                className="text-danger"
+                                model=".subdomainD"
+                                show="touched"
+                                messages={{
+                                    required: 'Required'
+                                
+                                }}
+                             />
                          </Col>
                        </Row>
                        : null
@@ -386,11 +494,25 @@ class Form extends React.Component{
                            <Control.select model=".main" name="main" id="main"
                             onChange = {this.handleChange}
                             value = {this.state.main}
+                            validators={{
+                                required
+                            }}
                                className="form-control custom-select">
+                               <option>None</option>
                                <option>Technical</option>
                                <option>Corporate</option>
                                <option>Design and Creatives</option>
+                              
                            </Control.select>
+                           <Errors
+                                className="text-danger"
+                                model=".main"
+                                show="touched"
+                                messages={{
+                                    required: 'Required'
+                                
+                                }}
+                             />
                      </Col>
                    </Row>
                   
@@ -401,6 +523,9 @@ class Form extends React.Component{
                                <Control.select model=".rate" name="rate" id="rate"
                                 onChange = {this.handleChange}
                                 value = {this.state.rate}
+                                validators={{
+                                    required
+                                }}
                                    className="form-control custom-select">
                                    <option>1</option>
                                    <option>2</option>
@@ -409,6 +534,15 @@ class Form extends React.Component{
                                    <option>5</option>
                                   
                                </Control.select>
+                               <Errors
+                                className="text-danger"
+                                model=".rate"
+                                show="touched"
+                                messages={{
+                                    required: 'Required'
+                                
+                                }}
+                             />
                          </Col>
                        </Row>
                     <Row className="form-group mt-3 mb-3">
@@ -455,13 +589,18 @@ class Form extends React.Component{
                              />
                         </Col>
                     </Row>
-                    <Row className="form-group mt-3 mb-3">
+
+               
+                        <Row className="form-group mt-3 mb-3">
                         <Col md={{size:10, offset: 2}}>
-                            <Button type="submit" color="primary">
+                            <Button onClick={this.handleSubmit} color="primary">
                            Submit
                             </Button>
                         </Col>
-                    </Row>
+                         </Row>
+                      
+
+                  
                 </LocalForm>
              
            </div>

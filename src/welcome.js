@@ -38,8 +38,8 @@ class Welcome extends React.Component{
                 <li className="list-group-item">2 Questions to be answered with atleast 150 words.</li>
             </ul>
         </div>       
-        <h5 className="text-danger"><strong>*Note that all these sections must be filled carefully as they will determine the chances of your selection.</strong></h5>
-        <h3 className="text-primary mt-3 mb-2 lead">Best of Luck!</h3>
+        <h5 className="text-danger lead mr-1"><strong>*Note that all these sections must be filled carefully as they will determine the chances of your selection.</strong></h5>
+        <h3 className="text-primary mt-3 mb-2 lead"><strong>Best of Luck!</strong></h3>
 
       
     <Link to="/form" className="btn btn-success btn-lg mt-4 pl-5 pr-5 mb-4">Start</Link>
