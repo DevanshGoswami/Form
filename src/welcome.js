@@ -42,7 +42,7 @@ class Welcome extends React.Component{
         <h3 className="text-primary mt-3 mb-2 lead"><strong>Best of Luck!</strong></h3>
 
       
-    <Link to="/form" className="btn btn-success btn-lg mt-4 pl-5 pr-5 mb-4">Start</Link>
+    <Link to="/form" className="btn btn-outline-success btn-lg mt-4 pl-5 pr-5 mb-4">Start</Link>
             </div>
         );
     }

@@ -593,7 +593,7 @@ class Form extends React.Component{
                
                         <Row className="form-group mt-3 mb-3">
                         <Col md={{size:10, offset: 2}}>
-                            <Button onClick={this.handleSubmit} color="primary">
+                            <Button type="submit" color="btn btn-lg btn-outline-info">
                            Submit
                             </Button>
                         </Col>

@@ -36,7 +36,7 @@ class Thanks extends React.Component{
             </div>
             <h5 className="mt-4">For any doubts contact us</h5>
 
-            <a href = "mailto: codechefsrm@gmail.com" className="btn btn-danger btn-lg mt-2 mb-2 pl-2 pr-2"><span className="fa fa-envelope fa-lg"></span> Send Email</a>
+            <a href = "mailto: codechefsrm@gmail.com" className="btn btn-outline-danger btn-lg mt-2 mb-2 pl-2 pr-2"><span className="fa fa-envelope fa-lg"></span> Send Email</a>
          </div>  
         );
     }
