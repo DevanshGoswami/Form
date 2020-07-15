@@ -10,19 +10,24 @@ class Thanks extends React.Component{
 
     render(){
         return(
+            <div>
          <div className = "container">
                  <Navbar className="navbar navbar-expand-lg">
             <NavbarBrand>
                 <img src="https://avatars1.githubusercontent.com/u/11960354?s=400&u=a77c97db3237e61ac0548a9d887f35c74c7e595e&v=4" height="50" width="50" ></img>
                 
             </NavbarBrand>
-            
         </Navbar>
+
+        </div>
+        
             <Jumbotron>
              <h1 className = "text-success display-4">
                  Your Form was successfully submitted <span className="fa fa-thumbs-up fa-lg"></span>
              </h1>
              </Jumbotron>
+            
+             <div className = "container">
              
              <p className="lead">You'll shortly be contacted by us in a few days based on your submition</p>
             
@@ -38,6 +43,7 @@ class Thanks extends React.Component{
 
             <a href = "mailto: codechefsrm@gmail.com" className="btn btn-outline-danger btn-lg mt-2 mb-2 pl-2 pr-2"><span className="fa fa-envelope fa-lg"></span> Send Email</a>
          </div>  
+         </div>
         );
     }
 }

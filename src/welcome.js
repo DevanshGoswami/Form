@@ -14,6 +14,7 @@ class Welcome extends React.Component{
 
     render(){
         return(
+            <div>
             <div className="container">
                   <Navbar className="navbar navbar-expand-lg">
             <NavbarBrand>
@@ -22,12 +23,15 @@ class Welcome extends React.Component{
             </NavbarBrand>
             
         </Navbar>
-
+        </div>
+        
         <Jumbotron>
             <h1 className="display-4">
                 Welcome Chefs!
             </h1>
         </Jumbotron>
+
+        <div className="container">
         <h4 className="mb-4">We are finally recruiting</h4>
         <h5 className="mb-4 lead">The next page will present you a form which will require you to fill in the following information</h5>
         <div className="d-flex justify-content-center mr-5">
@@ -43,6 +47,7 @@ class Welcome extends React.Component{
 
       
     <Link to="/form" className="btn btn-outline-success btn-lg mt-4 pl-5 pr-5 mb-4">Start</Link>
+            </div>
             </div>
         );
     }

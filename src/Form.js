@@ -152,6 +152,7 @@ class Form extends React.Component{
     render(){
         
         return(
+            <div>
 
             <div className="container">
                <Navbar className="navbar navbar-expand-lg">
@@ -161,20 +162,23 @@ class Form extends React.Component{
             </NavbarBrand>
             
         </Navbar>
+
+        </div>
          <Jumbotron>
          
              
-                     <h1 className="display-4">
+                     <h2 className="display-4">
                  
-                       Recruitments
+                     <span className="mr-1">Recruitments</span>  
                         <hr className="my-4"></hr>
                         2020-21
                    
 
-                    </h1>
+                    </h2>
                
          
-     </Jumbotron>
+       </Jumbotron>
+     <div className="container">
 
             <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
             <Row className="form-group mt-3 mb-3">
@@ -352,18 +356,18 @@ class Form extends React.Component{
                     <Row className="form-group mt-3 mb-3">
                     <Label htmlFor="domain" className="font-weight-bold mb-2"  md={2}>Domain Name</Label>
                    
-                    <div class="custom-control custom-switch  pt-2"> 
-                        <div className="col-10 col-sm">
+                    <div class="custom-control custom-switch  pt-2 col-12 col-sm"> 
+                        <div >
                             <Control.checkbox model=".tech" name="tech" id="tech"
-                            onChange = {this.tech , this.handleChange}
+                            onClick = {this.tech , this.handleChange}
                        
                             className="form-control custom-control-input">   
                             </Control.checkbox><Label className="custom-control-label" htmlFor="tech"> Technical</Label> 
                         </div>
                     </div>
 
-                    <div class="custom-control custom-switch pt-2"> 
-                    <div className="col-12 col-sm">
+                    <div class="custom-control custom-switch pt-2 col-12 col-sm"> 
+                    <div >
                     <Control.checkbox model=".corp" name="corp" id="corp"
                       onChange = {this.corp , this.handleChange}
                
@@ -373,15 +377,15 @@ class Form extends React.Component{
                    </div>
                    </div>
 
-                   <div class="custom-control custom-switch pt-2"> 
-                    <div className="col-12 col-sm">
+                   <div class="custom-control custom-switch pt-2 col-12 col-sm"> 
+                    <div >
             
                     <Control.checkbox model=".des" name="des" id="des"
                        onChange = {this.des  , this.handleChange}
                  
                     className="form-control custom-control-input">
                        
-                    </Control.checkbox><Label className="custom-control-label" htmlFor="des"> Design and Creatives</Label>
+                    </Control.checkbox><Label className="custom-control-label" htmlFor="des"> Creatives</Label>
                    </div>
                    </div>
                    
@@ -391,7 +395,7 @@ class Form extends React.Component{
                         this.state.tech ?
                         <Row className="form-group mt-3 mb-3">
                    
-                        <Label htmlFor="subdomain1" className="font-weight-bold"  md={2}>Sub Domain(Technical)</Label>
+                        <Label htmlFor="subdomain1" className="font-weight-bold"  md={2}>Sub Domain<br></br>(Technical)</Label>
                         <Col md={10}>
                         
                                 <Control.select model=".subdomainT" name="subdomainT" id="subdomainT"
@@ -424,7 +428,7 @@ class Form extends React.Component{
                        this.state.corp ?
                        <Row className="form-group mt-3 mb-3">
                    
-                       <Label htmlFor="subdomain2" className="font-weight-bold"  md={2}>Sub Domain(Corporate)</Label>
+                       <Label htmlFor="subdomain2" className="font-weight-bold"  md={2}>Sub Domain<br></br>(Corporate)</Label>
                        <Col md={10}>
                        
                                <Control.select model=".subdomainC" name="subdomainC" id="subdomainC"
@@ -457,7 +461,7 @@ class Form extends React.Component{
                        this.state.des ?
                        <Row className="form-group mt-3 mb-3">
                    
-                       <Label htmlFor="subdomain3" className="font-weight-bold"  md={2}>Sub Domain(Design and Creatives)</Label>
+                       <Label htmlFor="subdomain3" className="font-weight-bold"  md={2}>Sub Domain<br></br>(Creatives)</Label>
                        <Col md={10}>
                        
                                <Control.select model=".subdomainD" name="subdomainD" id="subdomainD"
@@ -604,7 +608,7 @@ class Form extends React.Component{
                 </LocalForm>
              
            </div>
-            
+           </div>
         );
     }
 }
