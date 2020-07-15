@@ -166,17 +166,12 @@ class Form extends React.Component{
         </div>
          <Jumbotron>
          
-             
-                     <h2 className="display-4">
-                 
-                     <span className="mr-1">Recruitments</span>  
+                     <h1 className="d-none d-sm-block display-4">Recruitments</h1>  
+                     <h1 className="d-block d-sm-none display-5">Recruitments</h1>  
+                       
                         <hr className="my-4"></hr>
-                        2020-21
-                   
-
-                    </h2>
-               
-         
+                       <h1 className="display-4"> 2020-21 </h1>
+       
        </Jumbotron>
      <div className="container">
 
