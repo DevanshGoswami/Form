@@ -1,9 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Form from './Form';
 import Thanks from './thanks';
 import Welcome from './welcome';
+
 import {Switch , Route ,BrowserRouter as Router , withRouter} from 'react-router-dom';
 
 class App extends React.Component {

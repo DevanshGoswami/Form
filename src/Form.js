@@ -128,19 +128,21 @@ class Form extends React.Component{
     }
 
     tech(e){
+
+        
         this.setState({
-            tech : !this.state.tech,
+            tech : e.target.checked
             
         })
     }
     corp(e){
         this.setState({
-            corp : !this.state.corp
+            corp :  e.target.checked
         })
     }
     des(e){
         this.setState({
-            des : !this.state.des
+            des :  e.target.checked
         })
     }
 
@@ -354,7 +356,7 @@ class Form extends React.Component{
                     <div class="custom-control custom-switch  pt-2 col-12 col-sm"> 
                         <div >
                             <Control.checkbox model=".tech" name="tech" id="tech"
-                            onClick = {this.tech , this.handleChange}
+                            onClick = {this.tech}
                        
                             className="form-control custom-control-input">   
                             </Control.checkbox><Label className="custom-control-label" htmlFor="tech"> Technical</Label> 
@@ -364,7 +366,7 @@ class Form extends React.Component{
                     <div class="custom-control custom-switch pt-2 col-12 col-sm"> 
                     <div >
                     <Control.checkbox model=".corp" name="corp" id="corp"
-                      onChange = {this.corp , this.handleChange}
+                      onClick = {this.corp}
                
                     className="form-control custom-control-input">
                        
@@ -376,7 +378,7 @@ class Form extends React.Component{
                     <div >
             
                     <Control.checkbox model=".des" name="des" id="des"
-                       onChange = {this.des  , this.handleChange}
+                       onClick = {this.des}
                  
                     className="form-control custom-control-input">
                        
