@@ -85,7 +85,7 @@ class Form extends React.Component{
    
    
     handleSubmit(values) {
-
+       
       
         var N = this.state.name;
         var T = this.state.telnum;
@@ -184,7 +184,7 @@ class Form extends React.Component{
                             <Control.text model=".firstname" id="name" name="name"
                             onChange = {this.handleChange}
                             value = {this.state.name}
-                                placeholder="Name"
+                                placeholder="Fullname"
                                 className="form-control"
                                 validators={{
                                     required, minLength: minLength(3), maxLength: maxLength(15)
@@ -223,7 +223,7 @@ class Form extends React.Component{
                                 model=".year"
                                 show="touched"
                                 messages={{
-                                    required: 'Required'
+                                    required: 'Required',
                                 
                                 }}
                                />
@@ -235,7 +235,7 @@ class Form extends React.Component{
                             <Control.text model=".branch" id="branch" name="branch"
                              onChange = {this.handleChange}
                              value = {this.state.branch}
-                                placeholder="CSE Core"
+                                placeholder="eg. CSE Core"
                                 className="form-control"
                                 validators={{
                                     required
@@ -554,6 +554,7 @@ class Form extends React.Component{
                              value = {this.state.message}
                                 rows="12"
                                 className="form-control"
+                                placeholder="Min. 150 words required"
                                 validators={{
                                     required
                                 }} />
@@ -576,6 +577,7 @@ class Form extends React.Component{
                              value = {this.state.why}
                                 rows="12"
                                 className="form-control" 
+                                placeholder="Min. 150 words required"
                                 validators={{
                                     required
                                 }}/>

@@ -37,7 +37,7 @@ class Welcome extends React.Component{
         <div className="d-flex justify-content-center mr-5">
             <ul className="list-gorup">
                 <li className="list-group-item">Your Name , Phone Number and Email Address</li>
-                <li className="list-group-item">Your LinkedIn and Resume(name it using your full-name)</li>
+                <li className="list-group-item">Your LinkedIn and Resume(name it using your full-name).<br/>Your LinkedIN will improve the chances of your selection.For more information refer this <a href="https://docs.google.com/document/d/1iQqjt3HtOcnIpADffj8PaukWGQy_AnJpg1zGkX37_2o/edit?usp=sharing">document</a>.</li>
                 <li className="list-group-item">The domain you want to enter , the subdomain and your main preference (You can fill in multiple domains)</li>
                 <li className="list-group-item">2 Questions to be answered with atleast 150 words.</li>
             </ul>
